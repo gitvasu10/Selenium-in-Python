@@ -3,7 +3,7 @@ import time
 from selenium import webdriver
 #'By' is a class provided in this module, used to create locator strategies for finding the web elements on a web page
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.select import Select #Select is a class in Selenium for the selection of the static dropdowns in web pages
 
 #chrome driver
 driver = webdriver.Chrome()
