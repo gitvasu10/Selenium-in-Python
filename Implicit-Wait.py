@@ -1,3 +1,5 @@
+#Implicit wait is applied for saving time in cases where the web components get loaded at a faster pace than the rest of the omponenets on the page
+
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
