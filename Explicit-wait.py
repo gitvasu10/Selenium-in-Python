@@ -21,6 +21,9 @@ for result in resultList:
     button = result.find_element(By.XPATH, "div/button") #This is done to prevent the StaleElementReferenceException
     button.click() #Everytime finding the fresh references for the buttons
 
+#The concept of waits is included since there exists a loading lag among various componenets of dynamic websites.
+#In this codes, the website includes the coupon code box which takes more time to get loaded than the rest of the components. Hence, explicit wait
+
 
 
 #CLICKING ON THE CART BUTTON
