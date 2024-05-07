@@ -1,3 +1,5 @@
+#This code file uses the concept of time.sleep() which is not always preferred. THis is only for demo purposes signifying the need of implicit and explicit wait in Selenium
+
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
