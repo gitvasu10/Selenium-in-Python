@@ -49,6 +49,18 @@ print(text_to_print.text)
 # except NoSuchElementException:
 #     print("Element with class name 'promoInfo' not found.")
 
+
+#SUM VALIDATION
+#prices = driver.find_elements(By.XPATH, "//tr/td[5]")
+prices = driver.find_elements(By.CSS_SELECTOR,"tr td:nth-child(5) p")
+billTotal = 0
+for price in prices:
+    billTotal = billTotal + int(price.text)
+print("The total amount of the bill is: {}".format(billTotal))
+
+totalAmount = int(driver.find_element(By.CSS_SELECTOR,".totAmt").text)
+
+assert billTotal == totalAmount
 #CLICKING THE 'Place Order' BUTTON
 driver.find_element(By.XPATH,"//button[text()='Place Order']").click()
 
