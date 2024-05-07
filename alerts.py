@@ -1,3 +1,4 @@
+#This file is for handling the Alerts pop ups during text insertion in the text box
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
