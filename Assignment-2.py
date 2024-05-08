@@ -13,6 +13,7 @@ driver.find_element(By.CSS_SELECTOR, ".search-keyword").send_keys("ber")
 time.sleep(2)
 
 product_list = []
+expected_list = ['Cucumber - 1 Kg', 'Raspberry - 1/4 Kg', 'Strawberry - 1/4 Kg']
 resultList = driver.find_elements(By.XPATH, "//div[@class='products']/div")
 # for product in resultList:
 #     product_list.append(product.text)
@@ -29,8 +30,11 @@ print("The count of the products in the result list is {}".format(len(resultList
 #ADDING THE DESIRED COMPONENTS IN THE CART
 #Chaining of parent-to-child components
 for result in resultList:
+    product_list.append(result.find_element(By.XPATH, "h4").text)
     button = result.find_element(By.XPATH, "div/button") #This is done to prevent the StaleElementReferenceException
     button.click() #Everytime finding the fresh references for the buttons
+
+assert expected_list == product_list, "The lists do not match!"
 
 #The concept of waits is included since there exists a loading lag among various componenets of dynamic websites.
 #In this codes, the website includes the coupon code box which takes more time to get loaded than the rest of the components. Hence, explicit wait
