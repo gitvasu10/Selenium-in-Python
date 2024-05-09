@@ -1,6 +1,6 @@
 import time
 from selenium import webdriver
-from selenium.webdriver import ActionChains
+from selenium.webdriver import ActionChains #Python class for performing mouse operations
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -14,7 +14,7 @@ action = ActionChains(driver)
 
 driver.implicitly_wait(15)
 driver.maximize_window()
-action.move_to_element(driver.find_element(By.ID, "mousehover")).perform()
+action.move_to_element(driver.find_element(By.ID, "mousehover")).perform()   #must function to be used with the mouse operations
 time.sleep(2)
 #wait = WebDriverWait(driver, 10)
 #wait.until(expected_conditions.presence_of_element_located((By.LINK_TEXT, "Top")))
