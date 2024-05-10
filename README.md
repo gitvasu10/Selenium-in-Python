@@ -10,3 +10,4 @@ Search bars
 div
 Images
 
+Also includes the test automation framework 
