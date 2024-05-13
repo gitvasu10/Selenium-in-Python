@@ -1,3 +1,5 @@
+#This file serves the purpose of sharing data through fixtures across various files
+
 import pytest
 
 @pytest.fixture(scope="class")
