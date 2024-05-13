@@ -2,7 +2,8 @@
 #2 Methods' name must begin with 'test'
 #3 The entire code logic should be encapsulated in the method body
 
-#4 -v --> Verbose, provides extra details regarding the test cases
+#4
+#  -v --> Verbose, provides extra details regarding the test cases
 #  -s --> Fof printing the entire contents from the test methods
 #  -k --> For running the specific test methods from different files
 #  -m --> For marking the test cases to run some specific ones only
