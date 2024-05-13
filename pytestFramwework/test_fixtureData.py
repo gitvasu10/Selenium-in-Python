@@ -1,5 +1,5 @@
 import pytest
-@pytest.mark.usefixtures("dataLoad")
+@pytest.mark.usefixtures("dataLoad") #Annotation for including fixtures from the conftest file into the current one
 class TestExample:
     def test_edit(self, dataLoad): #If we want to return something from the fixture, then we have to pass the parameter in the function itself
         print(dataLoad)
