@@ -6,9 +6,10 @@
 #  -s --> Fof printing the entire contents from the test methods
 #  -k --> For running the specific test methods from different files
 #  -m --> For marking the test cases to run some specific ones only
+#  We can declare any mark as a custom mark in pytest
 
 import pytest
-
+@pytest.mark.skip
 def test_firstFunction():
    #print("This is a pytest test function!")
     message = "Hello"
