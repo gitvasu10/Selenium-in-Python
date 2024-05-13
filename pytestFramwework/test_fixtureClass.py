@@ -2,7 +2,7 @@ import pytest
 
 
 @pytest.mark.usefixtures("setup")
-class testClass:
+class TestClass:
 
     def test_confTest1(self):
         print("This line was run by using the conftest file...")
