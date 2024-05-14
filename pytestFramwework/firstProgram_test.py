@@ -8,6 +8,12 @@
 #  -m --> For marking the test cases to run some specific ones only
 #  We can declare any mark as a custom mark in pytest
 
+#fixtures are used as setup and teardown methods for test cases- conftest file to generalize
+#fixture and make it available to all test cases(givin fixture name into parameters of methods)
+
+#data driven and parameterization can be done with return statemtents in tuple format
+#When we define fixture scope to class only, it will run once before class is initiated and at the end
+
 import pytest
 @pytest.mark.skip
 def test_firstFunction():

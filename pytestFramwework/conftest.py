@@ -9,3 +9,8 @@ def setup():
 def dataLoad():
     print("Inside the data load fixture")
     return ["My", "Name", "is"] #Returning the list
+
+#---------14th May----------------------------Opening same test case in multiple browsers----------Running tests in multiple datasets----------
+@pytest.fixture(params=["Chrome", "Firefox", "IE"])
+def browsers(request):
+    return request.param

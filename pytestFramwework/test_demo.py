@@ -24,3 +24,9 @@ def test_car():
 
 def test_confTest(setup):
     print("This line was run by using the conftest file...")
+
+#----------------------------------14th May-----------------------------------------------------
+
+def test_browser(browsers):
+    print(browsers)
+
