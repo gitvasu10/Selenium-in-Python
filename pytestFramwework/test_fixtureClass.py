@@ -1,10 +1,10 @@
 import pytest
 
 
-@pytest.mark.usefixtures("setup")
+@pytest.mark.usefixtures("setup") #Globally declaring the fixture
 class TestClass:
-
-    def test_confTest1(self):
+#No need to define in the individual test methods
+    def test_confTest1(self): 
         print("This line was run by using the conftest file...")
 
     def test_confTest2(self):

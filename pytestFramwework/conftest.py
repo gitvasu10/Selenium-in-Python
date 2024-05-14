@@ -1,3 +1,5 @@
+#This file serves the purpose of sharing data through fixtures across various files
+
 import pytest
 
 @pytest.fixture(scope="class")
@@ -9,8 +11,11 @@ def setup():
 def dataLoad():
     print("Inside the data load fixture")
     return ["My", "Name", "is"] #Returning the list
+<<<<<<< HEAD
 
 #---------14th May----------------------------Opening same test case in multiple browsers----------Running tests in multiple datasets----------
 @pytest.fixture(params=["Chrome", "Firefox", "IE"])
 def browsers(request):
     return request.param
+=======
+>>>>>>> 41b72e425be6ed79d81e1de992573edf47afcc36
