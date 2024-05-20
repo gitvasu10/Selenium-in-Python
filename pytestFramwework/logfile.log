@@ -1,0 +1,12 @@
+2024-05-20 11:22:50,424 :INFO : pytestFramwework.test_logging : Information statement not related to the errors and failures
+2024-05-20 11:22:50,424 :WARNING : pytestFramwework.test_logging : The current version of the method is depricated...
+2024-05-20 11:22:50,424 :ERROR : pytestFramwework.test_logging : The test got failed
+2024-05-20 11:22:50,424 :CRITICAL : pytestFramwework.test_logging : Update the method used in the script or the code breaks
+2024-05-20 11:22:50,429 :INFO : pytestFramwework.test_logging : Information statement not related to the errors and failures
+2024-05-20 11:22:50,429 :INFO : pytestFramwework.test_logging : Information statement not related to the errors and failures
+2024-05-20 11:22:50,429 :WARNING : pytestFramwework.test_logging : The current version of the method is depricated...
+2024-05-20 11:22:50,429 :WARNING : pytestFramwework.test_logging : The current version of the method is depricated...
+2024-05-20 11:22:50,431 :ERROR : pytestFramwework.test_logging : The test got failed
+2024-05-20 11:22:50,431 :ERROR : pytestFramwework.test_logging : The test got failed
+2024-05-20 11:22:50,431 :CRITICAL : pytestFramwework.test_logging : Update the method used in the script or the code breaks
+2024-05-20 11:22:50,431 :CRITICAL : pytestFramwework.test_logging : Update the method used in the script or the code breaks
