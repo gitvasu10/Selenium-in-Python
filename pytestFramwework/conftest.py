@@ -15,6 +15,6 @@ def dataLoad():
 
 #---------14th May----------------------------Opening same test case in multiple browsers----------Running tests in multiple datasets----------
 @pytest.fixture(params=["Chrome", "Firefox", "IE"])
-def browsers(request):
+def browsers(request):  #The params will be passed in the request parameter and this request param would work further
     return request.param
 
