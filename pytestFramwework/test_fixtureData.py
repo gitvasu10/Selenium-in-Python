@@ -10,11 +10,17 @@ class TestExample(Log):
         log.info(dataLoad[0])
         log.info(dataLoad[1])
 #On declaring the fixture name globally, we don;t need to pass the parameter in the function declaration.
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1a23ce5522b789c46930bc981d4c087a69c52c1
 #Only in the case where the fixture is returning something that we need to explicitly mention the fixture name in the function parameter list
 
 
 #--------14th May ------------------Running the data with multiple set of test runs
 #Only in the case where the fixture is returning something that we need to explicitly mention the fixture name in the function parameter list.
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1a23ce5522b789c46930bc981d4c087a69c52c1
