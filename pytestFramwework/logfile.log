@@ -10,3 +10,5 @@
 2024-05-20 11:22:50,431 :ERROR : pytestFramwework.test_logging : The test got failed
 2024-05-20 11:22:50,431 :CRITICAL : pytestFramwework.test_logging : Update the method used in the script or the code breaks
 2024-05-20 11:22:50,431 :CRITICAL : pytestFramwework.test_logging : Update the method used in the script or the code breaks
+2024-05-20 13:33:45,066 :INFO : pytestFramwework.Log : My
+2024-05-20 13:33:45,066 :INFO : pytestFramwework.Log : Name
