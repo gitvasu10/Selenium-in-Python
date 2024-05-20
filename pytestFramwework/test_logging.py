@@ -27,7 +27,7 @@ def test_logging_demo():
     # Critical
 
     #WHATEVER IS IN THE MESSAGE WILL BE PASSED INTO THE message VARIABLE AND THE LOGGER LEVER IN THE levelname RESPECTIVELY
-    logger.setLevel(logging.INFO)
+    logger.setLevel(logging.INFO) # All statements but DEBUG will be printed
     logger.debug("This is my first debug code!")
 
     logger.info("Information statement not related to the errors and failures")
