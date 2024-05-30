@@ -21,7 +21,7 @@ import pytest
 #     return request.param
 
 
-#--------30th May----------------------------
+#--------30th May------use of fixtures in the e2eTest file(copy) to reduce the code redundancy-----------
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -33,7 +33,7 @@ def setup(request):
     driver = webdriver.Chrome()
     driver.implicitly_wait(4)
     driver.get("https://rahulshettyacademy.com/angularpractice/")
-    request.cls.driver = driver
+    request.cls.driver = driver #This line passes this driver into the e2eTest class driver
     driver.maximize_window()
     yield
     driver.close()
