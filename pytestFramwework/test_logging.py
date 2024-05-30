@@ -9,7 +9,7 @@ def test_logging_demo():
     file_handler = logging.FileHandler("logfile.log")
 
     #Providing the format in which the output should be printed
-    # %() ---> So that it can be evalueated at run time
+    # %() ---> So that it can be evaluated at run time
     formatter = logging.Formatter("%(asctime)s :%(levelname)s : %(name)s : %(message)s")
 
     #Setting up the connection between the file and the logger
