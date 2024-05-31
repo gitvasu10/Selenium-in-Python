@@ -1,3 +1,4 @@
+#This file is created for better comprehending the use of fixtures in any class to reduce code redundancy 
 import time
 import pytest
 from selenium import webdriver
