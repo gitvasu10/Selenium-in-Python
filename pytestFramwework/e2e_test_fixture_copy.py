@@ -5,10 +5,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-@pytest.mark.usefixtures("setup") #Globally declaring the fixture
-class e2e_fixture:
-    def fixture_func(self,setup):
-        setup.find_element(By.CSS_SELECTOR, "a[href*='shop']").click()
+from pytestFramwework.utilities.base_class import base_class
+
+
+#@pytest.mark.usefixtures("setup") #Globally declaring the fixture
+class e2e_fixture(base_class):
+    #def fixture_func(self,setup):
+    def fixture_func(self):
+        self.find_element(By.CSS_SELECTOR, "a[href*='shop']").click()
 
 #This approach would only find the product 'name' only
 #itemList = driver.find_elements(By.CSS_SELECTOR, "h4")
