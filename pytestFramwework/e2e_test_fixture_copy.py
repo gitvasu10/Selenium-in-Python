@@ -10,9 +10,9 @@ from pytestFramwework.utilities.base_class import base_class
 
 
 #@pytest.mark.usefixtures("setup") #Globally declaring the fixture
-class e2e_fixture(base_class):
+class e2e_fixture(base_class):    #Inheriting the base class from utilities package
     #def fixture_func(self,setup):
-    def fixture_func(self):
+    def fixture_func(self):    #When inheriting the base class, no need to write 'setup' explicitly
         self.find_element(By.CSS_SELECTOR, "a[href*='shop']").click()
 
 #This approach would only find the product 'name' only
