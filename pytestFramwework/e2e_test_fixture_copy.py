@@ -10,7 +10,7 @@ from pytestFramwework.utilities.base_class import base_class
 
 
 #@pytest.mark.usefixtures("setup") #Globally declaring the fixture
-class e2e_fixture(base_class):
+class e2e_fixture(base_class): #The above line are contained in the base_class python file
     #def fixture_func(self,setup):
     def fixture_func(self):
         self.find_element(By.CSS_SELECTOR, "a[href*='shop']").click()

@@ -1,7 +1,7 @@
 import pytest
 
 
-@pytest.mark.usefixtures("setup") #Globally declaring the fixture
+
 class TestClass:
 #No need to define in the individual test methods
     def test_confTest1(self):
