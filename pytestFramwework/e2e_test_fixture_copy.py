@@ -14,7 +14,7 @@ from pytestFramwework.utilities.base_class import BaseClass
 #The above line are contained in the base_class python file
 class E2eTestFixtureCopy(BaseClass):  #Inheriting the base class from utilities package
     #def fixture_func(self,setup):
-    def __init__(self):
+    def __init__(self): #Constructor for driver initialization
         self.driver = webdriver.Firefox()
 
     def fixture_func(self):  #When inheriting the base class, no need to write 'setup' explicitly
@@ -52,6 +52,6 @@ class E2eTestFixtureCopy(BaseClass):  #Inheriting the base class from utilities 
         self.driver.find_element(By.XPATH, "//input[@type='submit']").click()
         print(self.driver.find_element(By.CLASS_NAME, "alert").text)
 
-
+#Function call
 testObj = E2eTestFixtureCopy()
 testObj.fixture_func()
