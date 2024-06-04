@@ -6,18 +6,17 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-
 from pytestFramwework.utilities.base_class import BaseClass
 
-
-#@pytest.mark.usefixtures("setup") #Globally declaring the fixture
 #The above line are contained in the base_class python file
-class E2eTestFixtureCopy(BaseClass):  #Inheriting the base class from utilities package
+#Inheriting the base class from utilities package
+class E2eTestFixtureCopy(BaseClass):  
     #def fixture_func(self,setup):
     def __init__(self): #Constructor for driver initialization
         self.driver = webdriver.Firefox()
 
-    def fixture_func(self):  #When inheriting the base class, no need to write 'setup' explicitly
+    #When inheriting the base class, no need to write 'setup' explicitly
+    def fixture_func(self):  
         self.driver.find_element(By.CSS_SELECTOR, "a[href*='shop']").click()
 
         #This approach would only find the product 'name' only
