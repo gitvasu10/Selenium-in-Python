@@ -1,7 +1,9 @@
 #This file serves the purpose of sharing data through fixtures across various files
 
 import pytest
-
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
 # @pytest.fixture(scope="class")
 # def setup():
 #     print("This line of code is inside the conftest file!")
@@ -30,11 +32,11 @@ from selenium.webdriver.common.by import By
 #This fixture will be used in the e2e_test_fixture_copy file
 @pytest.fixture(scope="class")
 def setup(request):
-    driver = webdriver.Chrome()
-    driver.implicitly_wait(4)
+    driver = webdriver.Firefox()
+    #driver.implicitly_wait(4)
     driver.get("https://rahulshettyacademy.com/angularpractice/")
-    request.cls.driver = driver #This line passes this driver into the e2eTest class driver
     driver.maximize_window()
+    request.cls.driver = driver #This line passes this driver into the e2eTest class driver
     yield
     driver.close()
 

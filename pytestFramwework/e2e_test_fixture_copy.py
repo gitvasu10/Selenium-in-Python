@@ -1,27 +1,31 @@
 #This file is created for better comprehending the use of fixtures in any class to reduce code redundancy 
 import time
 import pytest
+import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-from pytestFramwework.utilities.base_class import base_class
+from pytestFramwework.utilities.base_class import BaseClass
 
 
 #@pytest.mark.usefixtures("setup") #Globally declaring the fixture
-     #The above line are contained in the base_class python file
-class e2e_fixture(base_class):    #Inheriting the base class from utilities package
+#The above line are contained in the base_class python file
+class E2eTestFixtureCopy(BaseClass):  #Inheriting the base class from utilities package
     #def fixture_func(self,setup):
-    def fixture_func(self):    #When inheriting the base class, no need to write 'setup' explicitly
-        self.find_element(By.CSS_SELECTOR, "a[href*='shop']").click()
+    def __init__(self):
+        self.driver = webdriver.Firefox()
 
-#This approach would only find the product 'name' only
-#itemList = driver.find_elements(By.CSS_SELECTOR, "h4")
+    def fixture_func(self):  #When inheriting the base class, no need to write 'setup' explicitly
+        self.driver.find_element(By.CSS_SELECTOR, "a[href*='shop']").click()
 
-        itemList =self.driver.find_elements(By.XPATH, "//div[@class='card h-100']")
+        #This approach would only find the product 'name' only
+        #itemList = driver.find_elements(By.CSS_SELECTOR, "h4")
 
-#Extract the text from the parent div---> Apply chaining of the web elements
+        itemList = self.driver.find_elements(By.XPATH, "//div[@class='card h-100']")
+
+        #Extract the text from the parent div---> Apply chaining of the web elements
         for item in itemList:
             name = item.find_element(By.XPATH, "div/h4/a")
             if name.text == "Blackberry":
@@ -32,18 +36,22 @@ class e2e_fixture(base_class):    #Inheriting the base class from utilities pack
 
         self.driver.find_element(By.XPATH, "//a[@class='nav-link btn btn-primary']").click()
 
-#driver.get_screenshot_as_file("Blackberry.png")
+        #driver.get_screenshot_as_file("Blackberry.png")
         self.driver.find_element(By.XPATH, "//button[contains(@class,'btn btn-success')]").click()
 
-#Autosuggestive dropdown
+        #Autosuggestive dropdown
         self.driver.find_element(By.XPATH, "//input[@id='country']").send_keys("ind")
 
-#Waiting till the complete name appears on the screen
+        #Waiting till the complete name appears on the screen
         wait = WebDriverWait(self.driver, 10)
         wait.until(expected_conditions.presence_of_element_located((By.LINK_TEXT, "India")))
 
-#When appears automating the click operation
+        #When appears automating the click operation
         self.driver.find_element(By.LINK_TEXT, "India").click()
         self.driver.find_element(By.XPATH, "//div[@class='checkbox checkbox-primary']").click()
         self.driver.find_element(By.XPATH, "//input[@type='submit']").click()
         print(self.driver.find_element(By.CLASS_NAME, "alert").text)
+
+
+testObj = E2eTestFixtureCopy()
+testObj.fixture_func()
