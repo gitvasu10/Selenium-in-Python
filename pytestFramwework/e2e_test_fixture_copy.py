@@ -6,18 +6,25 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+
+from pytestFramwework.pageObject import HomePage
 from pytestFramwework.utilities.base_class import BaseClass
 
 #The above line are contained in the base_class python file
 #Inheriting the base class from utilities package
 class E2eTestFixtureCopy(BaseClass):  
     #def fixture_func(self,setup):
-    def __init__(self): #Constructor for driver initialization
-        self.driver = webdriver.Firefox()
+    # def __init__(self): #Constructor for driver initialization
+    #     self.driver = webdriver.Firefox()
 
     #When inheriting the base class, no need to write 'setup' explicitly
-    def fixture_func(self):  
-        self.driver.find_element(By.CSS_SELECTOR, "a[href*='shop']").click()
+   #Added on 5th June, 2024------------------------------------------------------
+    def fixture_func(self):
+        homePage = HomePage(self.driver)
+        homePage.shopitem().click()
+    #----------------------------------------------------------------------------
+        #If using HomePage, No need for the below line
+        #self.driver.find_element(By.CSS_SELECTOR, "a[href*='shop']").click()
 
         #This approach would only find the product 'name' only
         #itemList = driver.find_elements(By.CSS_SELECTOR, "h4")
