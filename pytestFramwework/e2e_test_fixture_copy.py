@@ -8,21 +8,25 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 from pytestFramwework.pageObject import HomePage
-from pytestFramwework.utilities.base_class import BaseClass
+from pytestFramwework.utilities.BaseClass import BaseClass
+
 
 #The above line are contained in the base_class python file
 #Inheriting the base class from utilities package
-class E2eTestFixtureCopy(BaseClass):  
+class E2eTestFixtureCopy(BaseClass):
     #def fixture_func(self,setup):
     # def __init__(self): #Constructor for driver initialization
     #     self.driver = webdriver.Firefox()
 
     #When inheriting the base class, no need to write 'setup' explicitly
-   #Added on 5th June, 2024------------------------------------------------------
+    #Added on 5th June, 2024------------------------------------------------------
+    def __init__(self, driver):
+        super().__init__()
+
     def fixture_func(self):
         homePage = HomePage(self.driver)
         homePage.shopitem().click()
-    #----------------------------------------------------------------------------
+        #----------------------------------------------------------------------------
         #If using HomePage, No need for the below line
         #self.driver.find_element(By.CSS_SELECTOR, "a[href*='shop']").click()
 
@@ -57,6 +61,7 @@ class E2eTestFixtureCopy(BaseClass):
         self.driver.find_element(By.XPATH, "//div[@class='checkbox checkbox-primary']").click()
         self.driver.find_element(By.XPATH, "//input[@type='submit']").click()
         print(self.driver.find_element(By.CLASS_NAME, "alert").text)
+
 
 #Function call
 testObj = E2eTestFixtureCopy()
