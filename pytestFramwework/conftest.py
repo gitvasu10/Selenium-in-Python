@@ -30,13 +30,36 @@ from selenium.webdriver.common.by import By
 #scope="class" ensures that it's executed only once per test class rather than for every individual test method
 
 #This fixture will be used in the e2e_test_fixture_copy file
+#-----------------Till lecture 88------------------------------------------
+# @pytest.fixture(scope="class")
+# def setup(request):
+#     driver = webdriver.Firefox()
+#     #driver.implicitly_wait(4)
+#     driver.get("https://rahulshettyacademy.com/angularpractice/")
+#     driver.maximize_window()
+#     request.cls.driver = driver #This line passes this driver into the e2eTest class driver
+#     yield
+#     driver.close()
+#---------------------------------------------------------------------------
+def pytest_adoption(parser):
+    parser.adoption(
+        "--browser_name", action="store", default="chrome"
+    )
 @pytest.fixture(scope="class")
 def setup(request):
-    driver = webdriver.Firefox()
-    #driver.implicitly_wait(4)
+    global driver
+    browser_name = request.config.getoption("browser_name") # Th
+    if browser_name == "chrome":
+        driver = webdriver.Chrome()
+
+    elif browser_name == "firefox":
+        driver = webdriver.Firefox()
+
+    elif browser_name == "IE":
+        driver = webdriver.Firefox()
+
     driver.get("https://rahulshettyacademy.com/angularpractice/")
     driver.maximize_window()
     request.cls.driver = driver #This line passes this driver into the e2eTest class driver
     yield
     driver.close()
-
