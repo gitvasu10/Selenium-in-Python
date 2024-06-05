@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+
+
 class HomePage:
     #This is done so that whosover calls this class, has to pass a driver object as an argument
     def __init__(self, driver):
