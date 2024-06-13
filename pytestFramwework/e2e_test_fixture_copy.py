@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 from pytestFramwework.pageObject import HomePage
+from pytestFramwework.pageObject.CheckoutPage import CheckoutPage
 from pytestFramwework.utilities.BaseClass import BaseClass
 
 
@@ -24,8 +25,9 @@ class E2eTestFixtureCopy(BaseClass):
         super().__init__()
 
     def fixture_func(self):
-        homePage = HomePage(self.driver)
-        homePage.shopitem().click()
+        homePage = HomePage(self.driver)    #We are now creating objects for each page
+        homePage.shop_item().click()         #This is the core of Page Object design pattern
+        checkoutPage = CheckoutPage(self.driver)
         #----------------------------------------------------------------------------
         #If using HomePage, No need for the below line
         #self.driver.find_element(By.CSS_SELECTOR, "a[href*='shop']").click()
@@ -33,14 +35,15 @@ class E2eTestFixtureCopy(BaseClass):
         #This approach would only find the product 'name' only
         #itemList = driver.find_elements(By.CSS_SELECTOR, "h4")
 
-        itemList = self.driver.find_elements(By.XPATH, "//div[@class='card h-100']")
-
+        #itemList = self.driver.find_elements(By.XPATH, "//div[@class='card h-100']")
+        cards = checkoutPage.getCardTitles()
         #Extract the text from the parent div---> Apply chaining of the web elements
-        for item in itemList:
+        for item in cards:
             name = item.find_element(By.XPATH, "div/h4/a")
             if name.text == "Blackberry":
                 print("Required item found!")
-                item.find_element(By.XPATH, "div/button ").click()
+               # item.find_element(By.XPATH, "div/button ").click()
+                checkoutPage.getCardFooter().click()
                 print("Item added in the cart!")
             break
 
