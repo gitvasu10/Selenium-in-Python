@@ -8,5 +8,5 @@ class HomePage:
 
     shop = (By.CSS_SELECTOR, "a[href*='shop']")
 
-    def shopitem(self):
+    def shop_item(self):
         return self.driver.find_element(*HomePage.shop)
